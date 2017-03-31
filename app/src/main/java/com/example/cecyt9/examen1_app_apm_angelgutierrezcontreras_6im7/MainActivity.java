@@ -24,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickConvertir(View v){
+     try{
         int dato = Integer.parseInt(Dinero.getText().toString());
         res = dato / 15;
-        Toast.makeText(getApplicationContext(), " " + res, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "" + res, Toast.LENGTH_LONG).show();
+    }catch(Exception e)
+    {
+        Toast.makeText(getApplicationContext(),"Hay un error"+e.getMessage(), Toast.LENGTH_LONG).show();
+    }
         Intent Convertir = new Intent(this,Main2Activity.class);
         Bundle DatoResultado = new Bundle();
-        DatoResultado.putString("Resultado","Resultado: " + " "+res);
+        DatoResultado.putString("Resultado","Resultado: " + res);
         Convertir.putExtras(DatoResultado);
         finish();
         startActivity(Convertir);
