@@ -24,7 +24,7 @@
         android:onClick="onClickEnviar (Main2Activity)" />
 
     <TextView
-        android:text="Angel Gutierrez Contreras, Resultado"
+        android:text="Angel Gutierrez Contreras, "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"

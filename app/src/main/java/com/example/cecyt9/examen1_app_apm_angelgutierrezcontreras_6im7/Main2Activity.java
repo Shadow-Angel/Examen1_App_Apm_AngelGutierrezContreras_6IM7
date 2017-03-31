@@ -9,17 +9,17 @@ import android.widget.TextView;
 public class Main2Activity extends AppCompatActivity {
 
     TextView resultado;
-    float res = 0;
+    String res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Bundle datos = new Bundle();
+        Bundle datos;
         datos = this.getIntent().getExtras();
 
-        res = datos.getFloat("Resultados");
+        res = datos.getString("Resultado");
 
         resultado = (TextView) findViewById(R.id.textView2);
         String antes = resultado.getText().toString();

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
     public void onClickConvertir(View v){
         int dato = Integer.parseInt(Dinero.getText().toString());
         res = dato / 15;
-        Intent intencion = new Intent(this,Main2Activity.class);
-        Bundle Resultado = new Bundle();
-        Resultado.putFloat("Resultados",res);
-        intencion.putExtras(Resultado);
+        Toast.makeText(getApplicationContext(), " " + res, Toast.LENGTH_LONG).show();
+        Intent Convertir = new Intent(this,Main2Activity.class);
+        Bundle DatoResultado = new Bundle();
+        DatoResultado.putString("Resultado","Resultado: " + " "+res);
+        Convertir.putExtras(DatoResultado);
         finish();
-        startActivity(intencion);
+        startActivity(Convertir);
     }
 
 
